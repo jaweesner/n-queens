@@ -110,6 +110,9 @@ window.findNQueensSolution = function(n) {
   // recursive function pass in solutions, board and rowCount
   
   var queenSolutions = recurseQueen(board, boardSize, rowCount);
+   if (queenSolutions.length === 0) {
+    return new Board({n:n}).rows();
+  }
   console.log('Single solution for ' + n + ' queens:', JSON.stringify(queenSolutions[0].rows()));
   return queenSolutions[0].rows();
 };
